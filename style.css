@@ -621,7 +621,7 @@ footer.legacy-footer {
 .full-width-section {
   width: 100%;
   background: #00574b; /* match your preferred green or blue background */
-  padding: 0px;
+  padding: 40px;
   color: white;
 }
 
