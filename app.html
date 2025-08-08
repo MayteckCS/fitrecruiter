@@ -255,7 +255,17 @@ footer {
 .site-footer h3, .site-footer h4 {
   color: #aef2e0;
 }
+.logo a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
 
+.logo a:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
 </style>
 </head>
 <body>
@@ -263,11 +273,10 @@ footer {
  <!-- Navigation -->
   <nav class="top-nav">
     <div class="nav-container">
-      <div class="logo">Fit Recruiter</div>
+      <div class="logo"><a href="index.html">Fit Recruiter</div>
       <ul class="nav-links">
-        <li><a href="index.html#studios">Studios</a></li>
-        <li><a href="index.html#features">Features</a></li>
-        <li><a href="index.html#quote">Get a Quote</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="app.html">Design Your Studio</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </div>
