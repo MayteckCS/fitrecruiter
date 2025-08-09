@@ -620,10 +620,9 @@ footer.legacy-footer {
 
 .full-width-section {
   width: 100%;
-  background: #00574b;
-  padding: 40px 0 40px 0;
+  background: #00574b; /* match your preferred green or blue background */
+  padding: 0px;
   color: white;
-  border-radius: 20px; /* round all 4 corners */
 }
 
 .section-content {
@@ -745,3 +744,37 @@ footer.legacy-footer {
   box-shadow: 0 0 15px rgba(0, 255, 170, 0.6), 0 0 20px rgba(0, 255, 255, 0.3);
   z-index: 1;
 }
+
+
+/* --- Lightbox --- */
+.lb { 
+  position: fixed; inset: 0; 
+  background: rgba(0,0,0,.85); 
+  display: flex; align-items: center; justify-content: center; 
+  z-index: 10000; /* above .top-nav (999) */
+}
+.lb.hidden { display: none; }
+.lb img.lb-img { 
+  max-width: 90vw; max-height: 90vh; 
+  box-shadow: 0 10px 40px rgba(0,0,0,.6); 
+  border-radius: 8px; 
+}
+.lb-close { 
+  position: absolute; top: 14px; right: 18px; 
+  font-size: 34px; background: transparent; border: 0; color: #fff; 
+  cursor: pointer; 
+}
+.lb-nav { 
+  position: absolute; top: 50%; transform: translateY(-50%); 
+  background: rgba(0,0,0,.35); border: 0; font-size: 40px; color: #fff; 
+  padding: 8px 14px; cursor: pointer; 
+}
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+
+/* Prevent page scroll when lightbox is open */
+body.lb-open { overflow: hidden; }
+
+/* Optional: make gallery thumbs look clickable */
+.gallery-grid a.lightbox img { cursor: zoom-in; }
+

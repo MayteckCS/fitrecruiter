@@ -75,69 +75,69 @@
     </div>
   </div>
 </section>
-	
+
 <section class="full-width-section">
   <div class="section-content">
 <h2>Gallery</h2>
 <div class="gallery-grid">
-    <a href="images/concepts/wood floor bare studio.png" target="_blank" class="lightbox">
+    <a href="images/concepts/wood floor bare studio.png" class="lightbox">
     <img src="images/concepts/wood floor bare studio.png" alt="Wood Floor Bare Studio" />
   </a>
-<a href="images/concepts/carpet bare studio.png" target="_blank" class="lightbox">
+<a href="images/concepts/carpet bare studio.png" class="lightbox">
   <img src="images/concepts/carpet bare studio.png" alt="Carpet Bare Studio" />
 </a>
-<a href="images/concepts/carpet bare studio with rail.png" target="_blank" class="lightbox">
+<a href="images/concepts/carpet bare studio with rail.png" class="lightbox">
   <img src="images/concepts/carpet bare studio with rail.png" alt="Carpet Bare Studio with Rail" />
 </a>
-<a href="images/concepts/carpet bare studio bare rooms.png" target="_blank" class="lightbox">
+<a href="images/concepts/carpet bare studio bare rooms.png" class="lightbox">
   <img src="images/concepts/carpet bare studio bare rooms.png" alt="Carpet Bare Studio - Bare Rooms" />
 </a>
-<a href="images/concepts/sample image stripped.png" target="_blank" class="lightbox">
+<a href="images/concepts/sample image stripped.png" class="lightbox">
   <img src="images/concepts/sample image stripped.png" alt="Sample Image - Stripped" />
 </a>
-  <a href="images/concepts/overhead 3d icon-style.png" target="_blank" class="lightbox">
+  <a href="images/concepts/overhead 3d icon-style.png" class="lightbox">
     <img src="images/concepts/overhead 3d icon-style.png" alt="Overhead 3D Icon-Style" />
   </a>
-  <a href="images/concepts/overhead angled 3d icon-style.png" target="_blank" class="lightbox">
+  <a href="images/concepts/overhead angled 3d icon-style.png" class="lightbox">
     <img src="images/concepts/overhead angled 3d icon-style.png" alt="Overhead Angled 3D Icon-Style" />
   </a>
-  <a href="images/concepts/overhead angled 3d icon-style_no track.png" target="_blank" class="lightbox">
+  <a href="images/concepts/overhead angled 3d icon-style_no track.png" class="lightbox">
     <img src="images/concepts/overhead angled 3d icon-style_no track.png" alt="Overhead Angled 3D (No Track)" />
   </a>
-  <a href="images/concepts/red wall white room bamboo studios.png" target="_blank" class="lightbox">
+  <a href="images/concepts/red wall white room bamboo studios.png" class="lightbox">
     <img src="images/concepts/red wall white room bamboo studios.png" alt="Bamboo Studios" />
   </a>
-  <a href="images/concepts/yoga room eye-level.png" target="_blank" class="lightbox">
+  <a href="images/concepts/yoga room eye-level.png" class="lightbox">
     <img src="images/concepts/yoga room eye-level.png" alt="Yoga Room" />
   </a>
-    <a href="images/concepts/fitness room eye-level.png" target="_blank" class="lightbox">
+    <a href="images/concepts/fitness room eye-level.png" class="lightbox">
     <img src="images/concepts/fitness room eye-level.png" alt="Fitness Room - Eye Level" />
   </a>
-    <a href="images/concepts/fitness room less clutter.png" target="_blank" class="lightbox">
+    <a href="images/concepts/fitness room less clutter.png" class="lightbox">
   <img src="images/concepts/fitness room less clutter.png" alt="Fitness Room - Less Clutter" />
 </a>
-    <a href="images/concepts/POC01.jpg" target="_blank" class="lightbox">
+    <a href="images/concepts/POC01.jpg" class="lightbox">
   <img src="images/concepts/POC01.jpg" alt="Proof of Concept - 01" />
 </a>
-    <a href="images/concepts/POC02.jpg" target="_blank" class="lightbox">
+    <a href="images/concepts/POC02.jpg" class="lightbox">
   <img src="images/concepts/POC02.jpg" alt="Proof of Concept - 02" />
 </a>
-    <a href="images/concepts/POC03.jpg" target="_blank" class="lightbox">
+    <a href="images/concepts/POC03.jpg" class="lightbox">
   <img src="images/concepts/POC03.jpg" alt="Proof of Concept - 03" />
 </a>
-    <a href="images/concepts/POC04.jpg" target="_blank" class="lightbox">
+    <a href="images/concepts/POC04.jpg" class="lightbox">
   <img src="images/concepts/POC04.jpg" alt="Proof of Concept - 04" />
 </a>
-    <a href="images/concepts/POC05.jpg" target="_blank" class="lightbox">
+    <a href="images/concepts/POC05.jpg" class="lightbox">
   <img src="images/concepts/POC05.jpg" alt="Proof of Concept - 05" />
 </a>
-    <a href="images/concepts/POC06.jpg" target="_blank" class="lightbox">
+    <a href="images/concepts/POC06.jpg" class="lightbox">
   <img src="images/concepts/POC06.jpg" alt="Proof of Concept - 06" />
 </a>
-    <a href="images/concepts/POC07.jpg" target="_blank" class="lightbox">
+    <a href="images/concepts/POC07.jpg" class="lightbox">
   <img src="images/concepts/POC07.jpg" alt="Proof of Concept - 07" />
 </a>
-	    <a href="images/concepts/POC08.jpg" target="_blank" class="lightbox">
+    <a href="images/concepts/POC08.jpg" class="lightbox">
   <img src="images/concepts/POC08.jpg" alt="Proof of Concept - 08" />
 </a>
 </div>
@@ -244,6 +244,63 @@
   }
 </script>
 
+
+<!-- Lightbox -->
+<div id="lb" class="lb hidden" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" aria-label="Previous">&#10094;</button>
+  <img class="lb-img" alt="">
+  <button class="lb-nav lb-next" aria-label="Next">&#10095;</button>
+</div>
+
+
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.gallery-grid a.lightbox')];
+  if (!links.length) return;
+
+  // Ensure no new-tab behavior
+  links.forEach(a => a.removeAttribute('target'));
+
+  const lb = document.getElementById('lb');
+  const img = lb.querySelector('.lb-img');
+  const btnClose = lb.querySelector('.lb-close');
+  const btnPrev = lb.querySelector('.lb-prev');
+  const btnNext = lb.querySelector('.lb-next');
+  let idx = 0;
+
+  function open(i) {
+    idx = i;
+    img.src = links[idx].getAttribute('href');
+    img.alt = links[idx].querySelector('img')?.alt || '';
+    lb.classList.remove('hidden');
+    document.body.classList.add('lb-open');
+    lb.setAttribute('aria-hidden', 'false');
+  }
+  function close() { 
+    lb.classList.add('hidden'); 
+    document.body.classList.remove('lb-open');
+    img.removeAttribute('src'); 
+    lb.setAttribute('aria-hidden', 'true');
+  }
+  function prev() { open((idx - 1 + links.length) % links.length); }
+  function next() { open((idx + 1) % links.length); }
+
+  links.forEach((a, i) => {
+    a.addEventListener('click', (e) => { e.preventDefault(); open(i); });
+  });
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', prev);
+  btnNext.addEventListener('click', next);
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (lb.classList.contains('hidden')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+</script>
+
 </body>
 </html>
-
