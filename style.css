@@ -38,13 +38,29 @@ html {
 
 .hero-image {
   width: 100%;
-  height: auto;
+  height: 55vh;
+  object-fit:cover;
   display: block;
 }
 
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
+}
+.hero-header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 section {
