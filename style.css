@@ -362,6 +362,24 @@ footer.legacy-footer {
   height: clamp(260px, 36vw, 480px); /* scales with width; no vh */
   overflow: hidden;
 
+  .parallax-header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,.40) 100%);
+  pointer-events:none;
+}
+
+/* 2) Make only the subtitle easier to read */
+.parallax-header .hero-content p{
+  display:inline-block;
+  padding: .35rem .75rem;
+  background: rgba(0,0,0,.45);   /* translucent pill behind text */
+  border-radius: .5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+
 .hero-image {
   width: 100%;
   height: 100%;
