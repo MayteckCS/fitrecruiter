@@ -361,7 +361,7 @@ footer.legacy-footer {
   right: 50%;
   margin-left: -50vw;    /* escape any parent .container */
   margin-right: -50vw;
-  min-height: calc(60vh + var(--nav-h));
+  min-height: 45vh;
   padding-top: var(--nav-h); /* push content below the fixed nav */
   overflow: hidden;
 }
@@ -371,7 +371,7 @@ footer.legacy-footer {
   position: absolute;
   inset: 0;
   background-image: url("images/main-banner.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   /* Optional light vignette to keep white text readable */
