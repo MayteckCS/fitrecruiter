@@ -36,29 +36,15 @@ html {
   object-fit: cover;
 }
 
-.hero-header {
-  position: relative;
-  width: 100%;
-  max-height: 500px; /* keeps it from being gigantic */
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;      /* natural aspect ratio */
-  display: block;
-}
-
 .hero-content {
   position: absolute;
-  bottom: 20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
 }
-
 
 .hero-content h1 {
   font-size: 3rem;
@@ -371,68 +357,19 @@ footer.legacy-footer {
 }
 
 
-/* Make sure your nav has a fixed height variable or hard value */
-:root {
-  --nav-h: 64px; /* adjust to your real nav height */
-}
-
-/* If your top nav is fixed, reserve space */
 .parallax-header {
   position: relative;
-  width: 100vw;          /* full viewport width */
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;    /* escape any parent .container */
-  margin-right: -50vw;
-  min-height: 45vh;
-  padding-top: var(--nav-h); /* push content below the fixed nav */
+  height: 400px;
   overflow: hidden;
 }
 
-/* Background image as a layer so it behaves like the old video */
-.parallax-header .hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url("images/main-banner.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* Optional light vignette to keep white text readable */
-}
-.parallax-header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.15) 40%, rgba(0,0,0,0));
-  pointer-events: none;
-}
-
-/* Overlay text */
-.hero-content {
-  position: relative; /* relative to header after padding-top */
-  display: grid;
-  place-items: center;
-  text-align: center;
-  color: #fff;
-  gap: 0.5rem;
-  min-height: 60vh; /* visual height of hero area */
-  text-shadow: 0 2px 12px rgba(0,0,0,.55);
-}
-
-/* Kill leftover video rules if they exist */
-.hero-video,
 .parallax-header video {
-  display: none !important;
-  visibility: hidden !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+  transform: scale(1.05);
 }
-
-/* Prevent clipping of card shadows below */
-.section--tiles,
-.tiles-wrapper {
-  overflow: visible;         /* allow glows/shadows to show */
-}
-
-
 
 .header-overlay-banner {
   position: absolute;
