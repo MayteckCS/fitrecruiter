@@ -359,13 +359,14 @@ footer.legacy-footer {
 
 .parallax-header {
   position: relative;
-  height: 45vh; /* adjust as needed */
+  height: 60vh; /* adjust as needed */
   overflow: hidden;
 }
 
 .hero-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit:cover;
   display: block;
 }
 
