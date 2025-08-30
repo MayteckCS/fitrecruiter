@@ -359,9 +359,8 @@ footer.legacy-footer {
 
 .parallax-header {
   position: relative;
-  height: 45vh; /* adjust as needed */
+  height: clamp(260px, 36vw, 480px); /* scales with width; no vh */
   overflow: hidden;
-}
 
 .hero-image {
   width: 100%;
