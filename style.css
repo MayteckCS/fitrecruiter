@@ -36,6 +36,11 @@ html {
   object-fit: cover;
 }
 
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 .hero-content h1 {
   font-size: 3rem;
