@@ -36,15 +36,6 @@ html {
   object-fit: cover;
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
-}
 
 .hero-content h1 {
   font-size: 3rem;
@@ -359,17 +350,27 @@ footer.legacy-footer {
 
 .parallax-header {
   position: relative;
-  height: 400px;
+  height: 60vh; /* adjust as needed */
   overflow: hidden;
 }
 
-.parallax-header video {
+.hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(80%);
-  transform: scale(1.05);
+  display: block;
 }
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
 
 .header-overlay-banner {
   position: absolute;
