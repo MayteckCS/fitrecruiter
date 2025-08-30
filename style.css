@@ -374,10 +374,10 @@ footer.legacy-footer {
 .parallax-header .hero-content p{
   display:inline-block;
   padding: .35rem .75rem;
-  background: rgba(0,0,0,.45);   /* translucent pill behind text */
+  background: rgba(0,0,0,.55);   /* translucent pill behind text */
   border-radius: .5rem;
   font-weight: 600;
-  text-shadow: 0 2px 6px rgba(0,0,0,.6);
+  text-shadow: 0 2px 8px rgba(0,0,0,.7);
 }
 
 .hero-image {
